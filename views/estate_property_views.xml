@@ -94,6 +94,7 @@
                     <field name="bedrooms" string="Search Bedrooms for:"/>
                     <field name="living_area" string="Search Living area for:"/>
                     <field name="facades" string="Search Facades for:"/>
+                    <field name="living_area" string="Search Living area for:" filter_domain="[('living_area', '>=', self)]"/>
                     <separator/>
                     <filter string="Properties" name="filter_properties" domain="['|',('state','=','new'),('state','=','offer_received')]"/>
                     <group expand="1" string="Group By">
