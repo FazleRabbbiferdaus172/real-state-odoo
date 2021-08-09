@@ -2,6 +2,7 @@ from odoo import fields,models
 
 class PropertyType(models.Model):
     _name = "estate.property.type"
+    _order = "name"
 
     name = fields.Char('Type',required=True)
     property_ids = fields.One2many(comodel_name="estate.property", inverse_name="property_type_id")
