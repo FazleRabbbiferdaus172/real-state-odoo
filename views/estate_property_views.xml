@@ -30,12 +30,13 @@
                 <header>
                     <button name="action_sold" style="border:none;color:#7D70BA;font-weight: bold;" type="object" string="SOLD"/>
                     <button name="action_cancel" style="border:none;color:red;font-weight: bold;" type="object" string="CANCEL"/>
+                    <field name="state" widget="statusbar" statusbar_visible="new,offer_received,offer_accepted,sold"/>
                 </header>
                 <sheet>
+                    <field name="name" />
                     <group>
                         <group>
                             <field name="property_tag_id" widget="many2many_tags"/>
-                            <field name="state"/>
                             <field name="property_type_id"/>
                             <field name="postcode"/>
                             <field name="date_availability"/>
@@ -50,7 +51,6 @@
                     <notebook>
                         <page string="Description">
                             <group>
-                                <field name="name" />
                                 <field name="description" />
                                 <field name="bedrooms" />
                                 <field name="living_area"/>
