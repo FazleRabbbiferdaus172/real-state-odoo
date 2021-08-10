@@ -102,7 +102,7 @@ class Property(models.Model):
     def _onchange_expected_price(self):
         self._check_selling_price()
 
-
+    @api.multi
     def unlink(self):
         if self.state not in ('new','canceled'):
             raise UserError("Can not delete the record, the record in not in new or canceled state")
