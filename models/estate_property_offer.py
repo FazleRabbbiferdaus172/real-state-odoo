@@ -49,3 +49,15 @@ class PropertyOffer(models.Model):
         self.ensure_one()
         self.status = 'refused'
         return True
+
+
+    @api.model
+    def create(self, vals):
+        #print(vals)
+        property_odj = self.env['estate.property'].browse(vals['property_id'])
+        min_offer = min(property_odj.offer_ids.mapped('price')) if property_odj.offer_ids.mapped('price') else 0
+        if vals['price'] < min_offer:
+            raise UserError("Can not offer a lower price")
+        #print(vals['price'],min_offer)
+        property_odj.state = 'offer_received'
+        return super().create(vals)

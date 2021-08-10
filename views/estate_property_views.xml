@@ -75,6 +75,7 @@
                         <page string="Offers">
                             <group>
                                 <field name="offer_ids" attrs="{'readonly': ['|','|',('state', '=', 'sold'),('state', '=', 'canceled'),('state', '=', 'offer_accepted')]}"/>
+<!--                                <field name="offer_ids" />-->
                             </group>
                         </page>
                     </notebook>
